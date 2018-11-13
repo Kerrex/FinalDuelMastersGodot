@@ -1,0 +1,282 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://GameList.gd" type="Script" id=1]
+[ext_resource path="res://MainMenuDeckList.gd" type="Script" id=2]
+[ext_resource path="res://new_dynamicfont.tres" type="DynamicFont" id=3]
+[ext_resource path="res://ManageDeckButton.gd" type="Script" id=4]
+[ext_resource path="res://AddGameDialog.gd" type="Script" id=5]
+
+[node name="Panel" type="Panel" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -4.0
+margin_top = -2.0
+margin_right = 1026.0
+margin_bottom = 596.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="ItemList" type="ItemList" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 88.0
+margin_top = 123.0
+margin_right = 704.0
+margin_bottom = 496.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+items = [  ]
+select_mode = 0
+allow_reselect = false
+icon_mode = 1
+fixed_icon_size = Vector2( 0, 0 )
+script = ExtResource( 1 )
+server_url = "http://localhost:9999"
+
+[node name="HTTPRequest" type="HTTPRequest" parent="ItemList" index="1"]
+
+download_file = ""
+use_threads = false
+body_size_limit = -1
+max_redirects = 8
+_sections_unfolded = [ "Pause" ]
+
+[node name="DeckList" type="ItemList" parent="." index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 768.0
+margin_top = 125.0
+margin_right = 977.0
+margin_bottom = 498.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+items = [  ]
+select_mode = 0
+allow_reselect = false
+icon_mode = 1
+fixed_icon_size = Vector2( 0, 0 )
+script = ExtResource( 2 )
+
+[node name="JoinButton" type="Button" parent="." index="2"]
+
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 112.0
+margin_top = -77.0
+margin_right = -759.0
+margin_bottom = -43.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Join game"
+flat = false
+align = 1
+_sections_unfolded = [ "Anchor", "Margin", "Rect" ]
+
+[node name="CreateButton" type="Button" parent="." index="3"]
+
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 330.0
+margin_top = -77.0
+margin_right = -541.0
+margin_bottom = -43.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Host game"
+flat = false
+align = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." index="4"]
+
+anchor_left = 0.5
+anchor_top = 0.0
+anchor_right = 0.5
+anchor_bottom = 0.0
+margin_left = -62.0
+margin_top = 30.0
+margin_right = 63.0
+margin_bottom = 92.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/normal_font = ExtResource( 3 )
+bbcode_enabled = true
+bbcode_text = "Lobby"
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 4
+text = "Lobby"
+scroll_active = false
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+_sections_unfolded = [ "BBCode", "Mouse", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
+
+[node name="RefreshButton" type="Button" parent="." index="5"]
+
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 546.0
+margin_top = -76.0
+margin_right = -323.0
+margin_bottom = -42.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Refresh list"
+flat = false
+align = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="ManageDeckButton" type="Button" parent="." index="6"]
+
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 793.0
+margin_top = -78.0
+margin_right = -76.0
+margin_bottom = -44.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Manage deck"
+flat = false
+align = 1
+script = ExtResource( 4 )
+_sections_unfolded = [ "Rect" ]
+
+[node name="AddGameDialog" type="ConfirmationDialog" parent="." index="7"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 221.0
+margin_bottom = 102.0
+rect_min_size = Vector2( 200, 70 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+popup_exclusive = true
+window_title = "Proszę potwierdzić..."
+resizable = false
+dialog_text = "Podaj nazwe gry"
+dialog_hide_on_ok = true
+script = ExtResource( 5 )
+_sections_unfolded = [ "Anchor", "Dialog", "Focus", "Popup" ]
+server_url = "http://localhost:9999/register"
+
+[node name="LineEdit" type="LineEdit" parent="AddGameDialog" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 8.0
+margin_top = 22.0
+margin_right = 213.0
+margin_bottom = 66.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 1
+size_flags_horizontal = 1
+size_flags_vertical = 1
+focus_mode = 2
+context_menu_enabled = true
+placeholder_alpha = 0.6
+caret_blink = false
+caret_blink_speed = 0.65
+caret_position = 0
+
+[node name="HTTPRequest" type="HTTPRequest" parent="AddGameDialog" index="4"]
+
+download_file = ""
+use_threads = false
+body_size_limit = -1
+max_redirects = 8
+
+[connection signal="request_completed" from="ItemList/HTTPRequest" to="ItemList" method="_on_HTTPRequest_request_completed"]
+
+[connection signal="pressed" from="JoinButton" to="ItemList" method="_on_JoinButton_pressed"]
+
+[connection signal="pressed" from="CreateButton" to="AddGameDialog" method="_on_CreateButton_pressed"]
+
+[connection signal="pressed" from="RefreshButton" to="ItemList" method="_on_RefreshButton_pressed"]
+
+
